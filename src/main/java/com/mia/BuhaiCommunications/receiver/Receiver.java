@@ -1,2 +1,4 @@
-package com.mia.BuhaiCommunications.Receiver;public class Receiver {
+package com.mia.BuhaiCommunications.receiver;
+
+public class Receiver {
 }
