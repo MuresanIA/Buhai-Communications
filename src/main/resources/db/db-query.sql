@@ -2,9 +2,9 @@
 -- 1. Create Schema
 -- ####################
 
---CREATE USER BUHAIU WITH PASSWORD buhaiu;
+--CREATE USER buhaiu WITH PASSWORD buhaiu;
 --CREATE DATABASE buhai_communications;
---GRANT ALL PRIVILEGES ON DATABASE buhaiu to buhai_communications;
+--GRANT ALL PRIVILEGES ON DATABASE buhai_communications to buhaiu ;
 
 -- ####################
 -- 2. Create Tables
