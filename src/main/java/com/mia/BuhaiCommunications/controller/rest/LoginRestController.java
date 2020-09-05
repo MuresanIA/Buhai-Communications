@@ -1,2 +1,5 @@
-package com.mia.BuhaiCommunications.controller.rest;public class LoginRestController {
+package com.mia.BuhaiCommunications.controller.rest;
+
+public class LoginRestController {
+    //TODO: add functionality
 }
