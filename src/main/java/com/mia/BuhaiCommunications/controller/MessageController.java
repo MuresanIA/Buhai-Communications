@@ -1,5 +1,5 @@
 package com.mia.BuhaiCommunications.controller;
 
-public class UserController {
+public class MessageController {
     //TODO: add functionality
 }

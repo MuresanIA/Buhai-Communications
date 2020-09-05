@@ -1,2 +1,4 @@
-package com.mia.BuhaiCommunications.model;public class User {
+package com.mia.BuhaiCommunications.model;
+
+public class User {
 }
