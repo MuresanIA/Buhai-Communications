@@ -1,2 +1,4 @@
-package com.mia.BuhaiCommunications.controller;public class MainController {
+package com.mia.BuhaiCommunications.controller;
+
+public class MainController {
 }
