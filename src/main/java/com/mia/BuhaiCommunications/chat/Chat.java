@@ -1,4 +1,4 @@
-package com.mia.BuhaiCommunications.receiver;
+package com.mia.BuhaiCommunications.chat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,10 +13,11 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Receiver {
+public class Chat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Integer id;
 
     private String name;
