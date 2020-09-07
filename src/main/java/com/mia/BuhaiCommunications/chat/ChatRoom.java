@@ -3,6 +3,8 @@ package com.mia.BuhaiCommunications.chat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +19,18 @@ import java.util.UUID;
 public class ChatRoom {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(
+            strategy = GenerationType.AUTO,
+            generator = "pg-uuid"
+    )
+    @GenericGenerator(
+            name = "pg-uuid",
+            strategy = "uuid2",
+            parameters = @Parameter(
+                    name = "uuid_gen_strategy_class",
+                    value = "com.vladmihalcea.book.hpjp.hibernate.identifier.uuid.PostgreSQLUUIDGenerationStrategy"
+            )
+    )
 
     private UUID id;
 
