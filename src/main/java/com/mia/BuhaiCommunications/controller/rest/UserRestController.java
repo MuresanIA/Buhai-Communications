@@ -25,7 +25,7 @@ public class UserRestController {
         return ResponseEntity.of(userRepository.findById(id));
     }
 
-    @PostMapping("/message/create")
+    @PostMapping("/user/create")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         userRepository.save(user);
         return ResponseEntity.ok(user);
@@ -40,7 +40,7 @@ public class UserRestController {
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
 
-    @DeleteMapping("/user/delete/{id}")
+    @DeleteMapping("/user/{id}")
     public ResponseEntity deleteUser(@PathVariable Integer id) {
         try {
             userRepository.deleteById(id);
