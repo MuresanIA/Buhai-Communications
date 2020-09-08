@@ -1,12 +1,13 @@
 package com.mia.BuhaiCommunications.model;
 
+import com.mia.BuhaiCommunications.Sender.Sender;
+import com.mia.BuhaiCommunications.receiver.Receiver;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -22,4 +23,9 @@ public class Message {
 
     private Timestamp timestamp;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Receiver receiver;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Sender sender;
 }

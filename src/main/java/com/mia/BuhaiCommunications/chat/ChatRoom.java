@@ -8,17 +8,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Chat {
+public class ChatRoom {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private Integer id;
+    private UUID id;
 
     private String name;
 
