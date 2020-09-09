@@ -28,7 +28,7 @@ public class ChatRoom {
             strategy = "uuid2",
             parameters = @Parameter(
                     name = "uuid_gen_strategy_class",
-                    value = "com.vladmihalcea.book.hpjp.hibernate.identifier.uuid.PostgreSQLUUIDGenerationStrategy"
+                    value = "com.mia.BuhaiCommunications.chat.PostgreSQLUUIDGenerationStrategy.java"
             )
     )
 
