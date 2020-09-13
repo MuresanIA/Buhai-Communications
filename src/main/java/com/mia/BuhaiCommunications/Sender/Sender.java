@@ -1,5 +1,6 @@
 package com.mia.BuhaiCommunications.Sender;
 
+import com.mia.BuhaiCommunications.chat.ChatRoom;
 import com.mia.BuhaiCommunications.model.Message;
 import com.mia.BuhaiCommunications.model.User;
 import lombok.AllArgsConstructor;
@@ -27,5 +28,8 @@ public class Sender {
 
     @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Message> messages;
+
+    @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ChatRoom> chatRooms;
 
 }
