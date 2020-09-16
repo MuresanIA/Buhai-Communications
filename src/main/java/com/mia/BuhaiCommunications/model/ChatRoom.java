@@ -13,10 +13,9 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Message {
+public class ChatRoom {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    private String content;
-    private String sender;
+    private Integer chatRoomId;
+    private String queueName;
 }

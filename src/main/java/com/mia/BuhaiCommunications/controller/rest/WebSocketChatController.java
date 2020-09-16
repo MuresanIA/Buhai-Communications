@@ -1,4 +1,4 @@
-package com.mia.BuhaiCommunications.controller;
+package com.mia.BuhaiCommunications.controller.rest;
 
 import com.mia.BuhaiCommunications.model.Message;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -13,4 +13,5 @@ public class WebSocketChatController {
     public Message sendMessage(@Payload Message message) {
         return message;
     }
+
 }

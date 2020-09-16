@@ -22,6 +22,10 @@ function connect() {
 			var payload = JSON.parse(greeting.body);
             displayMessage(payload.sender + ": " + payload.content);
         });
+        stompClient.subscribe("chatRoom.queueName", function (sendingMessageToChatRoom) {
+            var payload = JSON.parse(sendingMessageToChatRoom.body);
+            displayMessage(payload.sender + ": " + payload.content);
+        });
     });
 }
 
