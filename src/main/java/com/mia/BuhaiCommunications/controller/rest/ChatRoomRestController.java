@@ -21,7 +21,7 @@ public class ChatRoomRestController {
     }
 
     @PostMapping("/chatrooms")
-    public ChatRoom createChatRoom(@RequestBody  ChatRoom chatRoom) {
+    public ChatRoom createChatRoom(@RequestBody ChatRoom chatRoom) {
         return chatRoomRepository.save(chatRoom);
     }
 

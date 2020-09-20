@@ -5,8 +5,7 @@ function setConnected(connected) {
     $("#disconnect").prop("disabled", !connected);
     if (connected) {
         $("#conversation").show();
-    }
-    else {
+    } else {
         $("#conversation").hide();
     }
     $("#greetings").html("");
@@ -19,8 +18,8 @@ function connect() {
         setConnected(true);
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/greeting-' + $("#queueName").text(), function (greeting) {
-			var payload = JSON.parse(greeting.body);
-            displayMessage(payload.sender + ": " + payload.content);
+            var payload = JSON.parse(greeting.body);
+            displayMessage(payload.sender + ": " + (getTimeFromTimeStamp(payload.timeStamp)) + ": " + payload.content);
         });
     });
 }
@@ -34,7 +33,11 @@ function disconnect() {
 }
 
 function sendName() {
-    stompClient.send("/app/hello/" + $("#queueName").text(), {}, JSON.stringify({'sender': $("#name").val(), "content": $("#message").val()}));
+    stompClient.send("/app/hello/" + $("#queueName").text(), {}, JSON.stringify({
+        'sender': $("#name").val(),
+        'timeStamp': $("#timeStamp").val(),
+        "content": $("#message").val()
+    }));
 }
 
 function displayMessage(message) {
@@ -45,7 +48,21 @@ $(function () {
     $("form").on('submit', function (e) {
         e.preventDefault();
     });
-    $( "#connect" ).click(function() { connect(); });
-    $( "#disconnect" ).click(function() { disconnect(); });
-    $( "#send" ).click(function() { sendName(); });
+    $("#connect").click(function () {
+        connect();
+    });
+    $("#disconnect").click(function () {
+        disconnect();
+    });
+    $("#send").click(function () {
+        sendName();
+    });
 });
+
+function getTimeFromTimeStamp(timeStamp) {
+    var date = new Date(timeStamp);
+    var hours = date.getHours();
+    var minutes = "0" + date.getMinutes();
+    var seconds = "0" + date.getSeconds();
+    return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+}

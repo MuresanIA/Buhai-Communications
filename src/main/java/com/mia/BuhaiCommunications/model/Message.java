@@ -19,4 +19,10 @@ public class Message {
     private Integer id;
     private String content;
     private String sender;
+    private long timeStamp;
+
+    public void setTimeStamp(long timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
 }
