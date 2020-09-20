@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Buhai Communications</title>
+</head>
+<body>
+
+<div class="list-view">
+    <h3>Chat Rooms</h3>
+    <table>
+        <thead>
+        <tr>
+            <td>
+                ID
+            </td>
+            <td>
+                Queue Name
+            </td>
+            <td>Action</td>
+            <td>URL</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="c : ${chatrooms}">
+            <td th:text="${c.chatRoomId}"></td>
+            <td th:text="${c.queueName}"></td>
+            <td><a th:href="@{'/websocket/' + ${c.chatRoomId}}">Click here for chat room !</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
