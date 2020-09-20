@@ -12,6 +12,7 @@ public class WebSocketChatController {
     @MessageMapping("/hello/{queueName}")
     @SendTo("/topic/greeting-{queueName}")
     public Message sendMessage(@DestinationVariable String queueName, @Payload Message message) {
+        message.setTimeStamp(System.currentTimeMillis());
         return message;
     }
 
