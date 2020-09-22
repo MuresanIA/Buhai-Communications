@@ -1,4 +1,4 @@
-package com.mia.BuhaiCommunications.controller.rest;
+package com.mia.BuhaiCommunications.controller.websocket;
 
 import com.mia.BuhaiCommunications.model.Message;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
