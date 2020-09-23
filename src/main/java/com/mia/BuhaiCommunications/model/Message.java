@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table()
-public class Message  {
+public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer messageId;
@@ -28,6 +28,5 @@ public class Message  {
     public void setTimeStamp(long timeStamp) {
         this.timeStamp = timeStamp;
     }
-
 
 }

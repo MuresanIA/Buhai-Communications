@@ -12,12 +12,18 @@ public class ChatRoomService {
 
     @Autowired
     private ChatRoomRepository chatRoomRepository;
+
     public List<ChatRoom> findAll() {
         return chatRoomRepository.findAll();
     }
 
     public ChatRoom findById(Integer id) {
         return chatRoomRepository.findByChatRoomId(id);
+    }
+
+    public ChatRoom findByQueueName(String queueName) {
+        ChatRoom chatRoom = chatRoomRepository.findByQueueName(queueName);
+        return chatRoom;
     }
 
 }
