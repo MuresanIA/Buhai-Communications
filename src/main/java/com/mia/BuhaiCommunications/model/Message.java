@@ -22,7 +22,7 @@ public class Message {
     @Column(nullable = false)
     private long timeStamp;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private ChatRoom chatRoom;
 
     public void setTimeStamp(long timeStamp) {

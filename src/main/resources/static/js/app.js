@@ -1,4 +1,5 @@
 var stompClient = null;
+connect();
 
 function setConnected(connected) {
     $("#connect").prop("disabled", connected);
@@ -22,14 +23,17 @@ function connect() {
             displayMessage(payload.sender + ": " + (getTimeFromTimeStamp(payload.timeStamp)) + ": " + payload.content);
         });
     });
+    getMessages();
 }
 
-function disconnect() {
-    if (stompClient !== null) {
-        stompClient.disconnect();
-    }
-    setConnected(false);
-    console.log("Disconnected");
+function getMessages() {
+    $.get("/api/messages/" + $("#chatRoomId").text(), function (response) {
+        console.log(response);
+        for (let i = 0; i < response.messages.length; i++) {
+            var payload = response.messages[i];
+            displayMessage(payload.sender + ": " + (getTimeFromTimeStamp(payload.timeStamp)) + ": " + payload.content);
+        }
+    });
 }
 
 function sendName() {
@@ -47,12 +51,6 @@ function displayMessage(message) {
 $(function () {
     $("form").on('submit', function (e) {
         e.preventDefault();
-    });
-    $("#connect").click(function () {
-        connect();
-    });
-    $("#disconnect").click(function () {
-        disconnect();
     });
     $("#send").click(function () {
         sendName();
