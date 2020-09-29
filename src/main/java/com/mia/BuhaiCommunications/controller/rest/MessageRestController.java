@@ -8,6 +8,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class MessageRestController {
@@ -24,12 +27,14 @@ public class MessageRestController {
         if (limit == null || limit <= 0) {
             limit = 10;
         }
-        return new MessageList(
+        List<Message> messages = (
                 messageRepository.showAllMessagesFromChatRoom(
                         chatRoomId,
                         PageRequest.of(0, limit, Sort.by(Sort.Direction.DESC, "messageId"))
                 )
         );
+        Collections.reverse(messages);
+        return new MessageList(messages);
     }
 
     @PostMapping("/messages")
