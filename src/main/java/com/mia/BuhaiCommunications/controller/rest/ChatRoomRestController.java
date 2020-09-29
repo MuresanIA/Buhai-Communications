@@ -16,8 +16,7 @@ public class ChatRoomRestController {
 
     @GetMapping("/chatrooms")
     public ChatRoomList showAllChatRooms() {
-        ChatRoomList chatRooms = new ChatRoomList(chatRoomRepository.findAll());
-        return chatRooms;
+        return new ChatRoomList(chatRoomRepository.findAll());
     }
 
     @PostMapping("/chatrooms")
