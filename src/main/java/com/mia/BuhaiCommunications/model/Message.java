@@ -25,6 +25,9 @@ public class Message {
     @ManyToOne(fetch = FetchType.EAGER)
     private ChatRoom chatRoom;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User users;
+
     public void setTimeStamp(long timeStamp) {
         this.timeStamp = timeStamp;
     }

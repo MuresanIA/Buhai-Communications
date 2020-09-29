@@ -1,6 +1,5 @@
 package com.mia.BuhaiCommunications.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,20 +8,21 @@ import javax.persistence.*;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table()
-public class ChatRoom {
+@AllArgsConstructor
+@Entity()
+@Table(name = "users")
+public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer chatRoomId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer userId;
     @Column(nullable = false)
-    private String queueName;
+    private String userName;
+    @Column(nullable = false)
+    private String userPassword;
 
-    @JsonIgnore
     @OneToMany(
-            mappedBy = "chatRoom",
+            mappedBy = "users",
             cascade = CascadeType.ALL
     )
     private List<Message> messages;
