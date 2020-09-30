@@ -27,5 +27,10 @@ public class User {
     )
     private List<Message> messages;
 
+    @OneToMany(
+            mappedBy = "users",
+            cascade = CascadeType.ALL
+    )
+    private List<ChatRoom> chatRooms;
 
 }
