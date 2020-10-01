@@ -20,6 +20,8 @@ public class User {
     private String userName;
     @Column(nullable = false)
     private String userPassword;
+    @Column(nullable = false)
+    private String userEmail;
 
     @OneToMany(
             mappedBy = "users",
