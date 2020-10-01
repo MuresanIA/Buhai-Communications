@@ -19,7 +19,7 @@ public class ChatRoomController {
     @RequestMapping(method = RequestMethod.GET, value = "/chatrooms")
     public String showAllChatRooms(Model model) {
         model.addAttribute("chatrooms", chatRoomService.findAll());
-        return "/ChatRoom/index";
+        return "/ChatRoom/chatroom";
     }
 
 
