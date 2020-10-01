@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+
+<body>
+<div class="container">
+    <h1>Register</h1>
+    <div class="form">
+        <form th:action="@{/register}" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" value="Register">Register</button>
+            <p>Already registered?
+                <a th:href="@{/login}">Login</a>
+            </p>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
+© 2020 GitHub, Inc.
