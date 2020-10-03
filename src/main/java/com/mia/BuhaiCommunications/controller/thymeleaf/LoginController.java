@@ -12,8 +12,4 @@ public class LoginController {
         return "security/login";
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/register")
-    public String registerPage(Model model) {
-        return "security/register";
-    }
 }
