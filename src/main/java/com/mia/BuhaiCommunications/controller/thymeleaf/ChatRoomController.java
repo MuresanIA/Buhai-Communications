@@ -16,10 +16,16 @@ public class ChatRoomController {
     @Autowired
     private ChatRoomService chatRoomService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/")
+    @RequestMapping(method = RequestMethod.GET, value = "/chatrooms")
     public String showAllChatRooms(Model model) {
         model.addAttribute("chatrooms", chatRoomService.findAll());
-        return "/ChatRoom/index";
+        return "/ChatRoom/chatroom";
+    }
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/")
+    public String showHomepage(Model model) {
+        return "home";
     }
 
     @GetMapping("/websocket/{id}")

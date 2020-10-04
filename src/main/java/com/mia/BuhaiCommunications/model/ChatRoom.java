@@ -26,4 +26,9 @@ public class ChatRoom {
             cascade = CascadeType.ALL
     )
     private List<Message> messages;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User users;
+
+
 }
