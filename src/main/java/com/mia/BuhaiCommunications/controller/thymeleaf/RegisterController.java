@@ -1,11 +1,7 @@
 package com.mia.BuhaiCommunications.controller.thymeleaf;
 
-import com.mia.BuhaiCommunications.model.PendingUser;
 import com.mia.BuhaiCommunications.model.User;
-import com.mia.BuhaiCommunications.repository.PendingUserRepository;
 import com.mia.BuhaiCommunications.repository.UserRepository;
-import com.mia.BuhaiCommunications.service.RandomStringGenerator;
-import com.mia.BuhaiCommunications.service.SendGridEmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,24 +11,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Optional;
 
 @Controller
 public class RegisterController {
 
-    // TODO: create user service
-
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private PendingUserRepository pendingUserRepository;
-
-    @Autowired
-    private RandomStringGenerator randomStringGenerator;
-
-    @Autowired
-    private SendGridEmailService sendGridEmailService;
+//
+//    @Autowired
+//    private PendingUserRepository pendingUserRepository;
+//
+//    @Autowired
+//    private RandomStringGenerator randomStringGenerator;
+//
+//    @Autowired
+//    private SendGridEmailService sendGridEmailService;
 
     @GetMapping("/register")
     public String registerUser() {
@@ -55,31 +48,31 @@ public class RegisterController {
         user.setUserName(username);
 
         userRepository.save(user);
-        PendingUser pendingUser = new PendingUser();
-        String activationCode = randomStringGenerator.getAlphaNumericString(20);
-        pendingUser.setActivationCode(activationCode);
-        sendGridEmailService.sendHTML("buhaidebalta.15@gmail.com",
-                user.getUserEmail(), "Please confirm account",
-                randomStringGenerator.linkCreator(activationCode,
-                        validationUrl));
-        pendingUser.setUser(user);
-        pendingUserRepository.save(pendingUser);
+//        PendingUser pendingUser = new PendingUser();
+//        String activationCode = randomStringGenerator.getAlphaNumericString(20);
+//        pendingUser.setActivationCode(activationCode);
+//        sendGridEmailService.sendHTML("buhaidebalta.15@gmail.com",
+//                user.getUserEmail(), "Please confirm account",
+//                randomStringGenerator.linkCreator(activationCode,
+//                        validationUrl));
+//        pendingUser.setUser(user);
+//        pendingUserRepository.save(pendingUser);
 
         return "redirect:/login";
     }
 
-    @GetMapping("/userValidation")
-    public String validateUser(String activationCode) {
-        System.out.println(activationCode);
-        Optional<PendingUser> optional = pendingUserRepository.findByActivationCode(activationCode);
-        if(optional.isPresent()) {
-
-            PendingUser pendingUser = optional.get();
-            System.out.println(pendingUser.getActivationCode());
-
-            pendingUserRepository.delete(pendingUser);
-        }
-        return "redirect:/login";
-
-    }
+//    @GetMapping("/userValidation")
+//    public String validateUser(String activationCode) {
+//        System.out.println(activationCode);
+//        Optional<PendingUser> optional = pendingUserRepository.findByActivationCode(activationCode);
+//        if(optional.isPresent()) {
+//
+//            PendingUser pendingUser = optional.get();
+//            System.out.println(pendingUser.getActivationCode());
+//
+//            pendingUserRepository.delete(pendingUser);
+//        }
+//        return "redirect:/login";
+//
+//    }
 }
