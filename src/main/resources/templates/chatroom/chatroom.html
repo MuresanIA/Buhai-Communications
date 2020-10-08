@@ -21,7 +21,6 @@
         </tr>
         </thead>
         <tbody>
-
         <tr th:each="c : ${chatrooms}">
             <td th:text="${c.chatRoomId}"></td>
             <td th:text="${c.queueName}"></td>
@@ -29,7 +28,6 @@
                 <a th:href="@{'/websocket/' + ${c.chatRoomId}}">Connect!</a>
                 <a th:href="@{/editchatroom/{id}(id = ${c.chatRoomId})}">Edit!</a>
                 <a th:href="@{/deletechatroom/{id}(id = ${c.chatRoomId})}">Delete!</a>
-
             </td>
         </tr>
         </tbody>
