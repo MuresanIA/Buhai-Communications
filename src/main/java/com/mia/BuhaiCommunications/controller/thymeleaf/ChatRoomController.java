@@ -47,7 +47,7 @@ public class ChatRoomController {
         return "redirect:/chatrooms";
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/deletechatroom/{id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/deletechatroom/{id}")
     public String deleteChatRoom(@PathVariable Integer id) {
         chatRoomService.deleteById(id);
 

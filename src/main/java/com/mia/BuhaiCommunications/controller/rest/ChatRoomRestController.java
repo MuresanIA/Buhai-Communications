@@ -29,4 +29,17 @@ public class ChatRoomRestController {
         chatRoomRepository.deleteById(chatRoom.getChatRoomId());
     }
 
+//    @DeleteMapping("/deletechatroom/{id}")
+//    public ResponseEntity deleteChatRoom(@PathVariable Integer id) {
+//        try {
+//            chatRoomRepository.deleteById(id);
+//            return ResponseEntity.ok().build();
+//        }
+//        catch (Exception ex) {
+//            return ResponseEntity.notFound().build();
+//        }
+//
+//    }
+
+
 }

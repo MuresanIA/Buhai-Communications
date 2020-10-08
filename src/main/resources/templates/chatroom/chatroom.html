@@ -19,6 +19,9 @@
             </td>
             <td>Action</td>
             <td>URL</td>
+            <td>Edit</td>
+            <td>Delete</td>
+
         </tr>
         </thead>
         <tbody>
@@ -26,7 +29,12 @@
         <tr th:each="c : ${chatrooms}">
             <td th:text="${c.chatRoomId}"></td>
             <td th:text="${c.queueName}"></td>
-            <td><a th:href="@{'/websocket/' + ${c.chatRoomId}}">Click here for chat room !</a></td>
+            <td>
+                <a th:href="@{'/websocket/' + ${c.chatRoomId}}">Connect to chat room!</a>
+                <a th:href="@{/editchatroom/{id}(id = ${c.chatRoomId})}">Edit Chat Room Name!</a>
+                <a th:href="@{/deletechatroom/{id}(id = ${c.chatRoomId})}">Delete Chat Room!</a>
+
+            </td>
         </tr>
         </tbody>
     </table>
