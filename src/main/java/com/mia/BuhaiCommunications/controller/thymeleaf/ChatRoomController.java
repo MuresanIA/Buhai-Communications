@@ -27,14 +27,32 @@ public class ChatRoomController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/createchatrooms")
-    public String createChatRooms(@ModelAttribute ChatRoom chatRoom) {
+    public String createChatRoom(@ModelAttribute ChatRoom chatRoom) {
 
         chatRoomService.save(chatRoom);
 
-        return "/chatrooms";
+        return "redirect:/chatrooms";
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/editchatroom/{id}")
+    public String editChatRoom(Model model, @PathVariable Integer id) {
+        ChatRoom chatRoom = chatRoomService.findById(id);
+        model.addAttribute("chatRoom", chatRoom);
+        return "chatroom/editchatroom";
+    }
 
+    @RequestMapping(method = RequestMethod.POST, value = "/editchatroom/{id}")
+    public String editChatRoom(@ModelAttribute ChatRoom chatRoom, @PathVariable Integer id) {
+        chatRoomService.save(chatRoom);
+        return "redirect:/chatrooms";
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/deletechatroom/{id}")
+    public String deleteChatRoom(@PathVariable Integer id) {
+        chatRoomService.deleteById(id);
+
+        return "redirect:/chatrooms";
+    }
 
     @RequestMapping(method = RequestMethod.GET, value = "/")
     public String showHomepage(Model model) {
@@ -49,7 +67,6 @@ public class ChatRoomController {
 
         return "/websocket/websocket";
     }
-
 
 
 }

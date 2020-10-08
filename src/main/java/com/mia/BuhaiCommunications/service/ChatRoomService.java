@@ -31,4 +31,8 @@ public class ChatRoomService {
     public ChatRoom save(ChatRoom chatRoom) {
         return chatRoomRepository.save(chatRoom);
     }
+
+    public void deleteById(Integer id) {
+        chatRoomRepository.deleteById(id);
+    }
 }
