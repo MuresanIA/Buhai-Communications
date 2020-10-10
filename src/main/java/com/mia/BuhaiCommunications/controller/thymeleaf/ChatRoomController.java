@@ -2,7 +2,11 @@ package com.mia.BuhaiCommunications.controller.thymeleaf;
 
 import com.mia.BuhaiCommunications.model.ChatRoom;
 import com.mia.BuhaiCommunications.service.ChatRoomService;
+import com.mia.BuhaiCommunications.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -54,16 +58,21 @@ public class ChatRoomController {
         return "redirect:/chatrooms";
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/")
-    public String showHomepage(Model model) {
-        return "home";
-    }
 
     @GetMapping("/websocket/{id}")
     public String getWebsocket(Model model, @PathVariable("id") Integer id) {
         ChatRoom chatRoom = chatRoomService.findById(id);
 
         model.addAttribute("chatroom", chatRoom);
+
+        String currentUserName = "Anonymous";
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            currentUserName = authentication.getName();
+        }
+
+
+        model.addAttribute("username", currentUserName);
 
         return "/websocket/websocket";
     }

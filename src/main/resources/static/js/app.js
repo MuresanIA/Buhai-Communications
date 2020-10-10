@@ -38,7 +38,7 @@ function getMessages() {
 
 function sendName() {
     stompClient.send("/app/hello/" + $("#queueName").text(), {}, JSON.stringify({
-        'sender': $("#name").val(),
+        'sender': $("#username").text(),
         'timeStamp': $("#timeStamp").val(),
         "content": $("#message").val()
     }));

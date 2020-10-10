@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <nav th:insert="menu.html::menu_nav">
+    </nav>
+
+    <script>
+        $(document).ready(function() {
+            $('select').formSelect();
+        });
+    </script>
 </head>
 <body>
 <form th:action="@{/editchatroom/{id}(id=${chatRoom.chatRoomId})}" th:object="${chatRoom}" method="post">
