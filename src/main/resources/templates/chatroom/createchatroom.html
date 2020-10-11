@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Chat Room</title>
+    <nav th:insert="menu.html::menu_nav">
+    </nav>
+
+    <script>
+        $(document).ready(function() {
+            $('select').formSelect();
+        });
+    </script>
+</head>
+<body>
+<form th:action="@{/createchatrooms}" th:object="${chatRoom}" method="post">
+    <h1>Create Chat Room</h1>
+
+    <input th:field="*{queueName}" id="queue_name" type="text" placeholder="Chat Room Name" required>
+    <label for="queue_name">Name</label>
+    <button type="submit">Create</button>
+
+</form>
+</body>
+</html>

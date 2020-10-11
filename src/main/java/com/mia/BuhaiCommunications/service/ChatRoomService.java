@@ -13,6 +13,8 @@ public class ChatRoomService {
     @Autowired
     private ChatRoomRepository chatRoomRepository;
 
+    private ChatRoom chatRoom;
+
     public List<ChatRoom> findAll() {
         return chatRoomRepository.findAll();
     }
@@ -26,4 +28,11 @@ public class ChatRoomService {
         return chatRoom;
     }
 
+    public ChatRoom save(ChatRoom chatRoom) {
+        return chatRoomRepository.save(chatRoom);
+    }
+
+    public void deleteById(Integer id) {
+        chatRoomRepository.deleteById(id);
+    }
 }

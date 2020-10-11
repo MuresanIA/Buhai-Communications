@@ -20,8 +20,6 @@ import java.util.Optional;
 @Controller
 public class RegisterController {
 
-    // TODO: create user service
-
     @Autowired
     private UserRepository userRepository;
 

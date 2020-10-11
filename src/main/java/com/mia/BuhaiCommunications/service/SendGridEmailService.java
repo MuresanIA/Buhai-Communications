@@ -19,7 +19,7 @@ import java.io.IOException;
 public class SendGridEmailService {
 
     @Autowired
-    private SendGrid sendGridClient;
+    private final SendGrid sendGridClient;
 
     @Autowired
     public SendGridEmailService(SendGrid sendGridClient) {

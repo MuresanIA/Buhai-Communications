@@ -8,7 +8,6 @@ public interface ChatRoomRepository extends JpaRepository<ChatRoom, Integer> {
 
     public ChatRoom findByChatRoomId(Integer chatRoomId);
 
-
     @Query("FROM ChatRoom c WHERE c.queueName = :queueName")
     public ChatRoom findByQueueName(String queueName);
 }

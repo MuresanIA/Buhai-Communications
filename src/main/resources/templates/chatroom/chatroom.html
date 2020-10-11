@@ -4,9 +4,16 @@
 
     <meta charset="UTF-8">
     <title>Buhai Communications</title>
+    <nav th:insert="menu.html::menu_nav">
+    </nav>
+
+    <script>
+        $(document).ready(function() {
+            $('select').formSelect();
+        });
+    </script>
 </head>
 <body>
-
 <div class="list-view">
     <h3>Chat Rooms</h3>
     <table>
@@ -16,21 +23,28 @@
                 Chatroom ID
             </td>
             <td>
-                Queue Name
+                Chat Room Name
             </td>
             <td>Action</td>
-            <td>URL</td>
         </tr>
         </thead>
         <tbody>
-
         <tr th:each="c : ${chatrooms}">
             <td th:text="${c.chatRoomId}"></td>
             <td th:text="${c.queueName}"></td>
-            <td><a th:href="@{'/websocket/' + ${c.chatRoomId}}">Click here for chat room !</a></td>
+            <td>
+                <a th:href="@{'/websocket/' + ${c.chatRoomId}}">Connect</a>
+                <a th:href="@{/editchatroom/{id}(id = ${c.chatRoomId})}">Edit</a>
+                <a th:href="@{/deletechatroom/{id}(id = ${c.chatRoomId})}">Delete</a>
+            </td>
         </tr>
         </tbody>
     </table>
 </div>
+<div>
+    <br>
+    <a th:href="@{/createchatrooms}">Create Chat Room</a>
+</div>
+
 </body>
 </html>
