@@ -13,14 +13,14 @@ function setConnected(connected) {
 }
 
 function connect() {
-    var socket = new SockJS('http://localhost:8080/websocketApp');
+    var socket = new SockJS('http://192.168.0.94:8080/websocketApp');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         setConnected(true);
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/greeting-' + $("#queueName").text(), function (greeting) {
             var payload = JSON.parse(greeting.body);
-            displayMessage(payload.sender + ": " + (getTimeFromTimeStamp(payload.timeStamp)) + ": " + payload.content);
+            displayMessage(payload.sender,payload.sender + ": " + (getTimeFromTimeStamp(payload.timeStamp)) + ": " + payload.content);
         });
     });
     getMessages();
@@ -31,7 +31,8 @@ function getMessages() {
         console.log(response);
         for (let i = 0; i < response.messages.length; i++) {
             var payload = response.messages[i];
-            displayMessage(payload.sender + ": " + (getTimeFromTimeStamp(payload.timeStamp)) + ": " + payload.content);
+            displayMessage(payload.sender, payload.sender + ": " + (getTimeFromTimeStamp(payload.timeStamp)) + ": " + payload.content);
+            updateScroll();
         }
     });
 }
@@ -44,8 +45,16 @@ function sendName() {
     }));
 }
 
-function displayMessage(message) {
+function displayMessage(sender, message) {
     $("#conversation").append("<tr><td>" + message + "</td></tr>");
+    // if (sender === $("#username").text()) {
+        updateScroll();
+    // }
+}
+
+function updateScroll() {
+    var element = document.getElementById("messages");
+    element.scrollTop = element.scrollHeight;
 }
 
 $(function () {
