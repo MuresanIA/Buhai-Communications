@@ -13,7 +13,7 @@ function setConnected(connected) {
 }
 
 function connect() {
-    var socket = new SockJS('http://192.168.0.94:8080/websocketApp');
+    var socket = new SockJS('http://localhost:8080/websocketApp');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         setConnected(true);
@@ -59,6 +59,7 @@ function updateScroll() {
 
 $(function () {
     $("form").on('submit', function (e) {
+        $(document).getElementById('message').value='';
         e.preventDefault();
     });
     $("#send").click(function () {

@@ -3,14 +3,18 @@
 <head>
     <title>Chat</title>
 
+    <link rel="stylesheet" href="/css/main.css"/>
+
+
     <nav th:insert="menu.html::menu_nav">
     </nav>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('select').formSelect();
         });
     </script>
+
 </head>
 <body>
 
@@ -20,14 +24,14 @@
 <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
     enabled. Please enable
     Javascript and reload this page!</h2></noscript>
-    </br>
+</br>
 </div>
 <div class="row" id="messages" style="overflow-y: scroll; height: 200px">
     <div class="col-md-12">
         <table id="conversation" class="table table-striped">
             <thead>
             <tr>
-                <th>Greetings</th>
+                <th>Greetings traveler</th>
             </tr>
             </thead>
             <tbody id="chatroom">
@@ -57,5 +61,6 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
 <script src="../../js/app.js"></script>
+
 </body>
 </html>

@@ -1,5 +1,5 @@
-<nav th:fragment="menu_nav" xmlns:th="http://www.thymeleaf.org">
-    <div class="nav-wrapper">
+<nav th:fragment="menu_nav" xmlns:th="http://www.thymeleaf.org " >
+    <div class="nav-wrapper" link rel="stylesheet" href="/css/main.css">
         <a class="right" th:href="@{/logout}">Logout</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -10,8 +10,8 @@
     </div>
 </nav>
 
-<script th:fragment="nav_script" xmlns:th="http://www.thymeleaf.org" >
-    $(document).ready(function(){
+<script th:fragment="nav_script" xmlns:th="http://www.thymeleaf.org">
+    $(document).ready(function () {
         $('.sidenav').sidenav();
     });
 </script>
