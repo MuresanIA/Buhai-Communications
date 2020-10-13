@@ -1,17 +1,17 @@
-<nav th:fragment="menu_nav" xmlns:th="http://www.thymeleaf.org " >
-    <div class="nav-wrapper" link rel="stylesheet" href="/css/main.css">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link rel="stylesheet" th:href="@{/css/main.css}" xmlns:th="http://www.thymeleaf.org"/>
+
+<nav th:fragment="menu_nav" class="navbar" xmlns:th="http://www.thymeleaf.org">
+    <div class="nav-wrapper">
         <a class="right" th:href="@{/logout}">Logout</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a th:href="@{/}">Home</a></li>
-            <li><a th:href="@{/home}">Register & Log in</a></li>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a th:href="@{/}">Register & Log in</a></li>
             <li><a th:href="@{/chatrooms}">View Chat Rooms</a></li>
         </ul>
     </div>
 </nav>
 
-<script th:fragment="nav_script" xmlns:th="http://www.thymeleaf.org">
-    $(document).ready(function () {
-        $('.sidenav').sidenav();
-    });
-</script>

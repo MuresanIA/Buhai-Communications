@@ -4,11 +4,18 @@
 
     <meta charset="UTF-8">
     <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <th:block th:insert="menu.html::menu_nav">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+    <th:block class="nav" th:insert="menu.html::menu_nav">
     </th:block>
 
-    <link rel="stylesheet" href="/css/main.css"/>
+<!--    <link rel="stylesheet" th:href="@{/css/main.css}"/>-->
 
 </head>
 
@@ -26,9 +33,9 @@
             <label for="emailAddress">Email</label>
             <input type="email" id="emailAddress" name="emailAddress" required>
 
-            <button type="submit" value="Register">Register</button>
+            <button type="submit" class="btn btn-default"  value="Register">Register</button>
             <p>Already registered?
-                <a th:href="@{/login}">Login</a>
+                <a th:href="@{/}">Login</a>
             </p>
 
         </form>

@@ -28,7 +28,6 @@ public class SecurityConfig {
 
             http
                     .authorizeRequests()
-                    .antMatchers("/login").permitAll()
                     .antMatchers("/register").permitAll()
                     .antMatchers("/userValidation").permitAll()
                     .antMatchers("/").permitAll()
@@ -36,8 +35,8 @@ public class SecurityConfig {
                     .anyRequest().authenticated()
                     .and()
                     .formLogin()
-                    .loginPage("/login").permitAll()
-                    .defaultSuccessUrl("/", true)
+                    .loginPage("/").permitAll()
+                    .defaultSuccessUrl("/chatrooms", true)
                     .and()
                     .logout()
                     .logoutUrl("/logout")

@@ -3,17 +3,19 @@
 <head>
     <title>Chat</title>
 
-    <link rel="stylesheet" href="/css/main.css"/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 
-    <nav th:insert="menu.html::menu_nav">
-    </nav>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            $('select').formSelect();
-        });
-    </script>
+<!--    <link rel="stylesheet" th:href="@{/css/main.css}"/>-->
+
+    <th:block class="nav" th:insert="menu.html::menu_nav">
+    </th:block>
 
 </head>
 <body>
@@ -25,10 +27,9 @@
     enabled. Please enable
     Javascript and reload this page!</h2></noscript>
 </br>
-</div>
-<div class="row" id="messages" style="overflow-y: scroll; height: 200px">
+<div class="row" id="messages" style="overflow-y: scroll; height: 60%">
     <div class="col-md-12">
-        <table id="conversation" class="table table-striped">
+        <table id="conversation" class="table table-striped highlight">
             <thead>
             <tr>
                 <th>Greetings traveler</th>
@@ -41,7 +42,7 @@
 
 </div>
 
-<div id="main-content" class="container">
+<div id="main-content" class="container" style="height: 40%">
     <div class="col-md-6">
         <form class="form-inline">
             <div class="form-group">

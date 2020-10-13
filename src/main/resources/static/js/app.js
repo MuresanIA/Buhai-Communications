@@ -20,7 +20,7 @@ function connect() {
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/greeting-' + $("#queueName").text(), function (greeting) {
             var payload = JSON.parse(greeting.body);
-            displayMessage(payload.sender,payload.sender + ": " + (getTimeFromTimeStamp(payload.timeStamp)) + ": " + payload.content);
+            displayMessage(payload.sender, payload.sender + ": " + (getTimeFromTimeStamp(payload.timeStamp)) + ": " + payload.content);
         });
     });
     getMessages();
@@ -48,7 +48,7 @@ function sendName() {
 function displayMessage(sender, message) {
     $("#conversation").append("<tr><td>" + message + "</td></tr>");
     // if (sender === $("#username").text()) {
-        updateScroll();
+    updateScroll();
     // }
 }
 
@@ -59,7 +59,9 @@ function updateScroll() {
 
 $(function () {
     $("form").on('submit', function (e) {
-        $(document).getElementById('message').value='';
+        const message = $("#message");
+        message.val('');
+        message.focus();
         e.preventDefault();
     });
     $("#send").click(function () {
