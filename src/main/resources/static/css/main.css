@@ -1,3 +1,8 @@
+.navbar{
+    background-color: gray;
+    color: gray;
+}
+
 .app-icon {
     width: 32px;
     height: 32px;
@@ -41,6 +46,199 @@
 
 
     color: #264653;
+}
+
+.register-form-password {
+    /* Password Label */
+
+    position: absolute;
+    width: 85px;
+    height: 21.12px;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    margin-top: 174.32px;
+    margin-left: 60px;
+    margin-bottom: 306.57px;
+
+    color: #264653;
+
+
+}
+.register-form-email{
+    /* Email Label */
+
+    position: absolute;
+    width: 57px;
+    height: 21.12px;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    margin-top: 288.63px;
+    margin-left: 60px;
+    margin-bottom: 192.25px;
+
+    color: #264653;
+}
+.register-button-css{
+    position: absolute;
+    width: 140px;
+    height: 32px;
+
+    background: #2A9D8F;
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    /* Login Button Text */
+    font-style: normal;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+
+    margin-top: 375px;
+    margin-left: 176px;
+
+}
+.login-hyperlink{
+    position: absolute;
+    width: 344px;
+    height: 42px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #264653;
+    margin-top: 440px;
+    margin-left: 220px;
+}
+.send-to-login-form-link{
+    /* Register new account text */
+
+    position: absolute;
+    width: 344px;
+    height: 42px;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    margin-top: 410px;
+    margin-left: 167px;
+    margin-bottom: 58px;
+
+    color: #264653;
+
+
+}
+
+.register-form-email-text-field-input{
+    /* Email Input Box */
+
+    position: absolute;
+    width: 320px;
+    height: 32.18px;
+
+    background: #FFFFFF;
+    border: 2px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-top: 321.82px;
+    margin-left: 86px;
+    margin-bottom: 148px;
+
+}
+
+.register-form-password-text-field-input {
+    /* Password Input Box */
+
+    position: absolute;
+    width: 320px;
+    height: 32.18px;
+
+    background: #FFFFFF;
+    border: 2px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    margin-top: 207.5px;
+    margin-left: 86px;
+    margin-bottom: 262.32px;
+
+}
+
+.register-form-username {
+    /* Username Label */
+
+    position: absolute;
+    width: 88px;
+    height: 21.12px;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    margin-top: 60px;
+    margin-left: 60px;
+    margin-bottom: 420.88px;
+
+    color: #264653;
+}
+
+.register-form-username-text-field {
+    /* Username Input Box */
+
+    position: absolute;
+    width: 320px;
+    height: 32.18px;
+
+    background: #FFFFFF;
+    border: 2px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    margin-top: 93.19px;
+    margin-left: 86px;
+}
+
+.register-form {
+    width: 492px;
+    height: 502px;
+    background: rgba(232, 240, 230, 0.5);
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    border-radius: 10px;
+    margin-left: 446px;
+    margin-right: 86px;
+    margin-top: -265px;
 }
 
 .login-form {
@@ -187,11 +385,12 @@
 a:link {
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
 
-.register-hyperlink{
+.register-hyperlink {
     position: absolute;
     width: 344px;
     height: 42px;
@@ -209,7 +408,7 @@ a:hover {
 
 }
 
-.buhai-communications-inc{
+.buhai-communications-inc {
     /* Footer Text */
 
     position: absolute;
