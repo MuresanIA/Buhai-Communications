@@ -54,10 +54,122 @@
     margin-right: 86px;
 }
 
-.login-account-message{
+.username-login {
+    margin-left: 60px;
+    margin-top: 80px;
+
+    /* Username Label */
+
+    position: absolute;
+    width: 88px;
+    height: 21px;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #264653;
+
+
+}
+
+.text-field-login {
+    margin-bottom: 357px;
+    margin-top: 113px;
+    margin-left: 86px;
+
+    /* Username Input Box */
+
+    position: absolute;
+    width: 320px;
+    height: 32px;
+
+    background: #FFFFFF;
+    border: 2px solid #264653;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+}
+
+.password-login {
+    margin-top: 205px;
+    margin-left: 60px;
+
+    /* Password Label */
+
+    position: absolute;
+    width: 85px;
+    height: 21px;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #264653;
+
+
+}
+
+.password-text-field-login {
+    margin-top: 238px;
+    margin-left: 86px;
+    margin-bottom: 232px;
+
+    /* Password Input Box */
+
+    position: absolute;
+    width: 320px;
+    height: 32px;
+
+    background: #FFFFFF;
+    border: 2px solid #264653;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+}
+
+.login-button-css {
+    margin-left: 176px;
+    margin-top: 340px;
+    margin-bottom: 130px;
+
+    /* Login Button */
+
+    position: absolute;
+    width: 140px;
+    height: 32px;
+
+    background: #2A9D8F;
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    /* Login Button Text */
+    font-style: normal;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+
+
+}
+
+.send-to-register-form-link {
+    position: absolute;
     width: 344px;
     height: 42px;
-
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -66,6 +178,57 @@
     display: flex;
     align-items: center;
     text-align: center;
-
     color: #264653;
+    margin-top: 400px;
+    margin-left: 180px;
+    margin-bottom: 58px;
 }
+
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.register-hyperlink{
+    position: absolute;
+    width: 344px;
+    height: 42px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #264653;
+    margin-left: 210px;
+    margin-top: 450px;
+
+}
+
+.buhai-communications-inc{
+    /* Footer Text */
+
+    position: absolute;
+    width: 1024px;
+    height: 33px;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 575px;
+    margin-top: 100px;
+
+    color: rgba(38, 70, 83, 0.6);
+}
+
+
+
