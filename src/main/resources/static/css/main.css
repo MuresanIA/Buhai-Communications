@@ -3,6 +3,134 @@
     color: gray;
 }
 
+.table-chat-rooms-positioning{
+    margin-top: 133px;
+    margin-left: 167px;
+}
+
+.connect-button-chat-rooms-form{
+    /* Connect Button */
+
+    /*position: absolute;*/
+    width: 127.35px;
+    height: 32px;
+
+    background: #2A9D8F;
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: white;
+
+}
+
+.create-new-chat-room-button{
+    /* Connect Button */
+
+    position: absolute;
+    width: 152px;
+    height: 48px;
+
+    background: #2A9D8F;
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: white;
+
+    margin-left: 378px;
+    margin-top: 25px;
+
+}
+
+.buhai-communications-inc-chat-room-form{
+    position: absolute;
+    width: 1024px;
+    height: 33px;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 600px;
+    margin-top: 300px;
+
+    color: rgba(38, 70, 83, 0.6);
+}
+
+.logout-button-chatrooms{
+    /* Logout Button */
+
+    position: absolute;
+    width: 127px;
+    height: 32px;
+
+    background: #E76F51;
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: white;
+    margin-left: 867px;
+    margin-top: 42px;
+}
+
+.edit-button-chat-rooms-form{
+    /* Edit Button */
+
+    /*position: absolute;*/
+    width: 127.35px;
+    height: 32px;
+
+    background: #F4A261;
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: white;
+
+}
+
+.delete-button-chat-rooms-form{
+    /* Delete Button */
+
+    /*position: absolute;*/
+    width: 127.35px;
+    height: 32px;
+
+    background: #E76F51;
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: white;
+
+}
+
+.chat-room-list-css{
+    /* Rectangle 1 */
+
+    /*position: absolute;*/
+    width: 690px;
+    height: 64px;
+
+    background: rgba(232, 240, 230, 0.5);
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    border-radius: 10px;
+    padding-bottom: 4em;
+
+
+
+}
+
+/*tr {*/
+/*    transform: scale(1);*/
+/*}*/
+.hide{
+
+    visibility: hidden
+
+}
+
 .app-icon {
     width: 32px;
     height: 32px;
