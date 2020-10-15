@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Chat Room</title>
+    <title>Edit Chatroom</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
           integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
@@ -16,6 +16,12 @@
 
 </head>
 <body>
+<div>
+    <i class="fas fa-feather-alt app-icon fa-2x"></i>
+    <div class="app-title">
+        Buhai Communications
+    </div>
+
 <form th:action="@{/editchatroom/{id}(id=${chatRoom.chatRoomId})}" th:object="${chatRoom}" method="post">
     <h1>Edit Chat Room Name</h1>
 
@@ -26,6 +32,7 @@
     <button type="submit">Save</button>
 
 </form>
-
+</div>
+<p th:class="buhai-communications-inc-create-chatroom-form">© 2020 Buhai Communcations, Inc.</p>
 </body>
 </html>
