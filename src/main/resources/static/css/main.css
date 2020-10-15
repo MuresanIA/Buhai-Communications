@@ -4,7 +4,7 @@
 }
 
 .table-chat-rooms-positioning{
-    margin-top: 133px;
+    margin-top: 15px;
     margin-left: 167px;
 }
 
@@ -21,6 +21,18 @@
     border-radius: 5px;
     color: white;
 
+}
+
+.create-chatroom-form-button{
+    margin-top: 60px;
+    margin-left: 350px;
+    width: 127.35px;
+    height: 32px;
+    background: dimgray;
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: white;
 }
 
 .create-new-chat-room-button{
@@ -158,6 +170,33 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.create-chatroom-text-message{
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    align-items: center;
+    margin-top: 120px;
+    margin-left: 250px;
+    color: #264653;
+}
+
+.chatroom-form-welcome-message{
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    align-items: center;
+
+    margin-left: 300px;
+    margin-top: 100px;
+
+    color: #264653;
+}
+
 .welcome-text {
 
     width: 300px;
@@ -282,6 +321,18 @@
     color: #264653;
 
 
+}
+
+.create-chatroom-text-field{
+    position: absolute;
+    width: 320px;
+    height: 32.18px;
+
+    background: #FFFFFF;
+    border: 2px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-left: 250px;
 }
 
 .register-form-email-text-field-input{

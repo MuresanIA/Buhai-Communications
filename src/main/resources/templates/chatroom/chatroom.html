@@ -18,9 +18,9 @@
 </head>
 <body>
 <div>
-<form th:action="@{/logout}" method="get">
-    <input th:class="logout-button-chatrooms" type="submit" value="Logout"/>
-</form>
+    <form th:action="@{/logout}" method="get">
+        <input th:class="logout-button-chatrooms" type="submit" value="Logout"/>
+    </form>
 </div>
 <div>
     <i class="fas fa-feather-alt app-icon fa-2x"></i>
@@ -28,11 +28,16 @@
         Buhai Communications
     </div>
 </div>
-<div class="list-view" >
+<div th:class="chatroom-form-welcome-message">
+    <p>Welcome, traveler!</p>
+    <p>We have many options, you see...</p>
+</div>
+<div class="list-view">
+
     <table th:class="table-chat-rooms-positioning">
         <tbody>
-        <tr  th:each="c : ${chatrooms}" th:class="chat-room-list-css" >
-            <td  th:text="${c.queueName}"></td>
+        <tr th:each="c : ${chatrooms}" th:class="chat-room-list-css">
+            <td th:text="${c.queueName}"></td>
             <td>
                 <form th:action="@{'/websocket/' + ${c.chatRoomId}}" method="get">
                     <input th:class="connect-button-chat-rooms-form" type="submit" value="Connect"/>
@@ -59,6 +64,8 @@
     </form>
 
 </div>
-    <p th:class="buhai-communications-inc-chat-room-form">© 2020 Buhai Communcations, Inc.</p>
+
+
+<p th:class="buhai-communications-inc-chat-room-form">© 2020 Buhai Communcations, Inc.</p>
 </body>
 </html>

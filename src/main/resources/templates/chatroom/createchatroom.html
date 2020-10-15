@@ -15,13 +15,20 @@
 
 </head>
 <body>
-<form th:action="@{/createchatrooms}" th:object="${chatRoom}" method="post">
-    <h1>Create Chat Room</h1>
+<div>
+    <i class="fas fa-feather-alt app-icon fa-2x"></i>
+    <div class="app-title">
+        Buhai Communications
+    </div>
 
-    <input th:field="*{queueName}" id="queue_name" type="text" placeholder="Chat Room Name" required>
-    <label for="queue_name">Name</label>
-    <button type="submit">Create</button>
+<div th:class="create-chatroom-text-message">
+    <p>It looks like you have discovered The Forge!</p>
+</div>
+<form th:action="@{/createchatrooms}" th:object="${chatRoom}" method="post">
+    <input th:class="create-chatroom-text-field" th:field="*{queueName}" id="queue_name" type="text" placeholder="Chat Room Name" required>
+    <button th:class="create-chatroom-form-button" type="submit">Create</button>
 
 </form>
+</div>
 </body>
 </html>
