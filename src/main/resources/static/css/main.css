@@ -23,6 +23,8 @@
 
 }
 
+
+
 .create-chatroom-form-button{
     margin-top: 60px;
     margin-left: 350px;
@@ -51,6 +53,24 @@
     margin-left: 378px;
     margin-top: 25px;
 
+}
+
+.buhai-communications-inc-create-chatroom-form{
+    position: absolute;
+    width: 1024px;
+    height: 33px;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    margin-left: 600px;
+    margin-top: 350px;
 }
 
 .buhai-communications-inc-chat-room-form{
