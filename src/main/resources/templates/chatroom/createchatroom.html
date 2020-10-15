@@ -22,7 +22,7 @@
     </div>
 
 <div th:class="create-chatroom-text-message">
-    <p>It looks like you have discovered The Forge!</p>
+    <p>Here we can create things.</p>
 </div>
 <form th:action="@{/createchatrooms}" th:object="${chatRoom}" method="post">
     <input th:class="create-chatroom-text-field" th:field="*{queueName}" id="queue_name" type="text" placeholder="Chat Room Name" required>
