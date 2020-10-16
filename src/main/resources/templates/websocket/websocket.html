@@ -3,49 +3,56 @@
 <head>
     <title>Chat</title>
 
-    <nav th:insert="menu.html::menu_nav">
-    </nav>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+          integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
-    <script>
-        $(document).ready(function() {
-            $('select').formSelect();
-        });
-    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+
 </head>
 <body>
-
-<p id="queueName" th:text="${chatroom.queueName}" style="display: none"></p>
-<p id="chatRoomId" th:text="${chatroom.chatRoomId}" style="display: none"></p>
-<p id="username" th:text="${username}" style="display: none"></p>
-<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
-    enabled. Please enable
-    Javascript and reload this page!</h2></noscript>
-    </br>
+<div>
+    <form th:action="@{/chatrooms}" method="get">
+        <input th:class="websocket-chatrooms-button" type="submit" value="Chatrooms"/>
+    </form>
 </div>
-<div class="row" id="messages" style="overflow-y: scroll; height: 200px">
-    <div class="col-md-12">
-        <table id="conversation" class="table table-striped">
-            <thead>
-            <tr>
-                <th>Greetings</th>
-            </tr>
-            </thead>
-            <tbody id="chatroom">
-            </tbody>
-        </table>
+<div>
+    <form th:action="@{/logout}" method="get">
+        <input th:class="logout-button-chatrooms" type="submit" value="Logout"/>
+    </form>
+</div>
+<div>
+    <i class="fas fa-feather-alt app-icon fa-2x"></i>
+    <div class="app-title">
+        Buhai Communications
     </div>
-
+    <p id="queueName" th:text="${chatroom.queueName}" style="display: none"></p>
+    <p id="chatRoomId" th:text="${chatroom.chatRoomId}" style="display: none"></p>
+    <p id="username" th:text="${username}" style="display: none"></p>
+    <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript
+        being
+        enabled. Please enable
+        Javascript and reload this page!</h2></noscript>
+</div>
+</br>
+<div th:class="table-websocket-form" class="row" id="messages" style="overflow-y: scroll; height: 60%">
+    <div id="chatroom" class="chatroom-container"></div>
 </div>
 
-<div id="main-content" class="container">
+<div id="main-content" class="container" style="height: 40%">
     <div class="col-md-6">
-        <form class="form-inline">
+        <form id="messageForm" class="form-inline">
             <div class="form-group">
-                <label for="message">Message: </label>
-                <input type="text" id="message" class="form-control" placeholder="Your message here...">
+                <input th:class="message-input-text-field" type="text" id="message" class="form-control"
+                       placeholder="Type a new message">
             </div>
-            </br>
-            <button id="send" class="btn btn-default" type="submit">Send</button>
+            <button th:class="send-message-websocket-button" id="send" class="btn btn-default" type="submit">Send
+            </button>
         </form>
     </div>
 
@@ -57,5 +64,10 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
 <script src="../../js/app.js"></script>
+
+<div th:class="websocket-welcome-message">
+    <p>We are all friends here.</p>
+</div>
+
 </body>
 </html>

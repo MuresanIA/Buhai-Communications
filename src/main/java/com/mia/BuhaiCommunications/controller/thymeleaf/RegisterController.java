@@ -63,7 +63,7 @@ public class RegisterController {
         pendingUser.setUser(user);
         pendingUserRepository.save(pendingUser);
 
-        return "redirect:/login";
+        return "redirect:/";
     }
 
     @GetMapping("/userValidation")
@@ -77,7 +77,7 @@ public class RegisterController {
 
             pendingUserRepository.delete(pendingUser);
         }
-        return "redirect:/login";
+        return "redirect:/";
 
     }
 }
