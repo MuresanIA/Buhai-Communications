@@ -14,9 +14,13 @@
     <link rel="stylesheet" th:href="@{/css/main.css}"/>
 
 
-
 </head>
 <body>
+<div>
+    <form th:action="@{/chatrooms}" method="get">
+        <input th:class="websocket-chatrooms-button" type="submit" value="Chatrooms"/>
+    </form>
+</div>
 <div>
     <form th:action="@{/logout}" method="get">
         <input th:class="logout-button-chatrooms" type="submit" value="Logout"/>
@@ -27,33 +31,28 @@
     <div class="app-title">
         Buhai Communications
     </div>
-<p id="queueName"  th:text="${chatroom.queueName}" style="display: none"></p>
-<p id="chatRoomId" th:text="${chatroom.chatRoomId}" style="display: none"></p>
-<p id="username" th:text="${username}" style="display: none"></p>
-<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
-    enabled. Please enable
-    Javascript and reload this page!</h2></noscript>
+    <p id="queueName" th:text="${chatroom.queueName}" style="display: none"></p>
+    <p id="chatRoomId" th:text="${chatroom.chatRoomId}" style="display: none"></p>
+    <p id="username" th:text="${username}" style="display: none"></p>
+    <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript
+        being
+        enabled. Please enable
+        Javascript and reload this page!</h2></noscript>
 </div>
 </br>
 <div th:class="table-websocket-form" class="row" id="messages" style="overflow-y: scroll; height: 60%">
-    <div class="col-md-12">
-        <table  id="conversation" class="table table-striped highlight">
-            <thead>
-            </thead>
-            <tbody id="chatroom">
-            </tbody>
-        </table>
-    </div>
-
+    <div id="chatroom" class="chatroom-container"></div>
 </div>
 
 <div id="main-content" class="container" style="height: 40%">
     <div class="col-md-6">
-        <form class="form-inline">
+        <form id="messageForm" class="form-inline">
             <div class="form-group">
-                <input th:class="message-input-text-field" type="text" id="message" class="form-control" placeholder="Type a new message">
+                <input th:class="message-input-text-field" type="text" id="message" class="form-control"
+                       placeholder="Type a new message">
             </div>
-            <button th:class="send-message-websocket-button" id="send" class="btn btn-default" type="submit">Send</button>
+            <button th:class="send-message-websocket-button" id="send" class="btn btn-default" type="submit">Send
+            </button>
         </form>
     </div>
 

@@ -137,6 +137,7 @@
     border: 1px solid rgba(38, 70, 83, 0.75);
     border-radius: 10px;
     margin-top: 40px;
+    margin-left: 40px;
 }
 
 .buhai-communications-inc-chat-room-form {
@@ -156,6 +157,19 @@
     margin-top: 210px;
 
     color: rgba(38, 70, 83, 0.6);
+}
+
+.websocket-chatrooms-button {
+    position: absolute;
+    width: 127px;
+    height: 32px;
+    background: dimgray;
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: white;
+    margin-left: 700px;
+    margin-top: 42px;
 }
 
 .logout-button-chatrooms {
@@ -229,7 +243,7 @@
 
 }
 
-.queuename-chatrooms-form{
+.queuename-chatrooms-form {
     display: inline-block;
     margin-top: 55px;
     position: absolute;
@@ -747,5 +761,28 @@ a:hover {
     color: rgba(38, 70, 83, 0.6);
 }
 
+.chat-message-container {
+    margin: 15px;
+}
+
+.chatroom-container {
+    padding: 15px;
+}
+
+.chat-message-yellow {
+    background-color: #E9C46A;
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    border-radius: 41px;
+    padding: 15px;
+    min-width: 50px;
+}
+
+.chat-message-green {
+    background-color: #2A9D8F;
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    border-radius: 41px;
+    padding: 15px;
+    min-width: 50px;
+}
 
 

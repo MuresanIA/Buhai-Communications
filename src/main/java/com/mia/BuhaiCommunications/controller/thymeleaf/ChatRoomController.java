@@ -2,7 +2,6 @@ package com.mia.BuhaiCommunications.controller.thymeleaf;
 
 import com.mia.BuhaiCommunications.model.ChatRoom;
 import com.mia.BuhaiCommunications.service.ChatRoomService;
-import com.mia.BuhaiCommunications.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;

@@ -20,7 +20,7 @@ function connect() {
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/greeting-' + $("#queueName").text(), function (greeting) {
             var payload = JSON.parse(greeting.body);
-            displayMessage(payload.sender, payload.sender + ": " + (getTimeFromTimeStamp(payload.timeStamp)) + ": " + payload.content);
+            displayMessage(payload.sender, payload.content, getTimeFromTimeStamp(payload.timeStamp));
         });
     });
     getMessages();
@@ -31,7 +31,7 @@ function getMessages() {
         console.log(response);
         for (let i = 0; i < response.messages.length; i++) {
             var payload = response.messages[i];
-            displayMessage(payload.sender, payload.sender + ": " + (getTimeFromTimeStamp(payload.timeStamp)) + ": " + payload.content);
+            displayMessage(payload.sender, payload.content, getTimeFromTimeStamp(payload.timeStamp));
             updateScroll();
         }
     });
@@ -45,11 +45,36 @@ function sendName() {
     }));
 }
 
-function displayMessage(sender, message) {
-    $("#conversation").append("<tr><td>" + message + "</td></tr>");
-    // if (sender === $("#username").text()) {
+function displayMessage(sender, message, time) {
+    var colorClass = "";
+    const inlineBlockClass = "div-inline-block"
+    if (sender === $("#username").text()) {
+        colorClass = "chat-message-yellow"
+    } else {
+        colorClass = "chat-message-green"
+    }
+    const tr = document.createElement("div");
+    tr.classList.add("chat-message-container")
+
+    const senderColumn = document.createElement("div");
+    senderColumn.innerText = sender
+    senderColumn.classList.add(inlineBlockClass)
+
+    const messageColumn = document.createElement("div");
+    messageColumn.classList.add(colorClass)
+    messageColumn.classList.add(inlineBlockClass)
+    messageColumn.innerText = message;
+
+    const timeColumn = document.createElement("div");
+    timeColumn.classList.add(inlineBlockClass)
+    timeColumn.innerText = time
+
+    tr.appendChild(senderColumn)
+    tr.appendChild(messageColumn)
+    tr.appendChild(timeColumn)
+
+    $("#chatroom").append(tr);
     updateScroll();
-    // }
 }
 
 function updateScroll() {
@@ -58,7 +83,7 @@ function updateScroll() {
 }
 
 $(function () {
-    $("form").on('submit', function (e) {
+    $("#messageForm").on('submit', function (e) {
         const message = $("#message");
         message.val('');
         message.focus();
@@ -73,6 +98,5 @@ function getTimeFromTimeStamp(timeStamp) {
     var date = new Date(timeStamp);
     var hours = date.getHours();
     var minutes = "0" + date.getMinutes();
-    var seconds = "0" + date.getSeconds();
-    return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    return hours + ':' + minutes.substr(-2);
 }

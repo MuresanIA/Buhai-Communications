@@ -31,7 +31,7 @@
     </div>
     <form th:action="@{/createchatrooms}" th:object="${chatRoom}" method="post">
         <input th:class="create-chatroom-text-field" th:field="*{queueName}" id="queue_name" type="text"
-               placeholder="Chat Room Name" required>
+               placeholder="Create a new chatroom here" required>
         <button th:class="create-chatroom-form-button" type="submit">Create</button>
 
     </form>
