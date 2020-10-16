@@ -33,25 +33,24 @@
     <p>We have many options, you see...</p>
 </div>
 <div class="container" th:class="chatrooms-container-poisitioning">
-
-        <div th:each="c : ${chatrooms}" th:class="chat-room-list-css">
-            <div th:class="queuename-chatrooms-form" style="display: inline-block" th:text="${c.queueName}"></div>
-            <div>
-                <form th:action="@{'/websocket/' + ${c.chatRoomId}}" method="get">
-                    <input th:class="connect-button-chat-rooms-form" type="submit" value="Connect"/>
-                </form>
-            </div>
-            <div>
-                <form th:action="@{/editchatroom/{id}(id = ${c.chatRoomId})}" method="get">
-                    <input th:class="edit-button-chat-rooms-form" type="submit" value="Edit"/>
-                </form>
-            </div>
-            <div>
-                <form th:action="@{/deletechatroom/{id}(id = ${c.chatRoomId})}" method="get">
-                    <input th:class="delete-button-chat-rooms-form" type="submit" value="Delete"/>
-                </form>
-            </div>
+    <div th:each="c : ${chatrooms}" th:class="chat-room-list-css">
+        <div th:class="queuename-chatrooms-form" style="display: inline-block" th:text="${c.queueName}"></div>
+        <div>
+            <form th:action="@{'/websocket/' + ${c.chatRoomId}}" method="get">
+                <input th:class="connect-button-chat-rooms-form" type="submit" value="Connect"/>
+            </form>
         </div>
+        <div>
+            <form th:action="@{/editchatroom/{id}(id = ${c.chatRoomId})}" method="get">
+                <input th:class="edit-button-chat-rooms-form" type="submit" value="Edit"/>
+            </form>
+        </div>
+        <div>
+            <form th:action="@{/deletechatroom/{id}(id = ${c.chatRoomId})}" method="get">
+                <input th:class="delete-button-chat-rooms-form" type="submit" value="Delete"/>
+            </form>
+        </div>
+    </div>
 </div>
 <div>
     <br>
