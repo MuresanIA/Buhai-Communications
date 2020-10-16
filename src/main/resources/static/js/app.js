@@ -59,6 +59,7 @@ function displayMessage(sender, message, time) {
     const senderColumn = document.createElement("div");
     senderColumn.innerText = sender
     senderColumn.classList.add(inlineBlockClass)
+    senderColumn.classList.add("sender-class-css")
 
     const messageColumn = document.createElement("div");
     messageColumn.classList.add(colorClass)
@@ -67,6 +68,7 @@ function displayMessage(sender, message, time) {
 
     const timeColumn = document.createElement("div");
     timeColumn.classList.add(inlineBlockClass)
+    timeColumn.classList.add("time-column-css")
     timeColumn.innerText = time
 
     tr.appendChild(senderColumn)

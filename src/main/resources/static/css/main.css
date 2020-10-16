@@ -94,7 +94,7 @@
     border: 2px solid #264653;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    margin-top: 500px;
+    margin-top: 550px;
     margin-left: 40px;
 }
 
@@ -122,7 +122,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     margin-left: 851px;
-    margin-top: 503px;
+    margin-top: 555px;
     color: white;
 }
 
@@ -765,6 +765,48 @@ a:hover {
     margin: 15px;
 }
 
+.sender-class-css {
+    /* Elon Musk: */
+
+    /*position: absolute;*/
+
+    font-family: Roboto Condensed, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 7px;
+
+    color: #000000;
+
+
+}
+
+.time-column-css{
+    /* 20:31 */
+
+    /*position: absolute;*/
+    /*width: 54px;*/
+    /*height: 28px;*/
+
+    font-family: Roboto Condensed, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    /*display: flex;*/
+    align-items: center;
+    text-align: center;
+    margin-left: 10px;
+
+    color: #000000;
+
+
+}
+
 .chatroom-container {
     padding: 15px;
 }
@@ -783,6 +825,7 @@ a:hover {
     border-radius: 41px;
     padding: 15px;
     min-width: 50px;
+    color: white;
 }
 
 
