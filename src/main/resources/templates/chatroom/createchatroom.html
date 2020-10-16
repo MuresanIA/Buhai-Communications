@@ -16,19 +16,25 @@
 </head>
 <body>
 <div>
+    <div>
+        <form th:action="@{/logout}" method="get">
+            <input th:class="logout-button-chatrooms" type="submit" value="Logout"/>
+        </form>
+    </div>
     <i class="fas fa-feather-alt app-icon fa-2x"></i>
     <div class="app-title">
         Buhai Communications
     </div>
 
-<div th:class="create-chatroom-text-message">
-    <p>Here we can create things.</p>
-</div>
-<form th:action="@{/createchatrooms}" th:object="${chatRoom}" method="post">
-    <input th:class="create-chatroom-text-field" th:field="*{queueName}" id="queue_name" type="text" placeholder="Chat Room Name" required>
-    <button th:class="create-chatroom-form-button" type="submit">Create</button>
+    <div th:class="create-chatroom-text-message">
+        <p>Here we can create things.</p>
+    </div>
+    <form th:action="@{/createchatrooms}" th:object="${chatRoom}" method="post">
+        <input th:class="create-chatroom-text-field" th:field="*{queueName}" id="queue_name" type="text"
+               placeholder="Chat Room Name" required>
+        <button th:class="create-chatroom-form-button" type="submit">Create</button>
 
-</form>
+    </form>
 </div>
 <p th:class="buhai-communications-inc-create-chatroom-form">© 2020 Buhai Communcations, Inc.</p>
 </body>

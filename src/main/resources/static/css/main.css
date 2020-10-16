@@ -23,7 +23,17 @@
 
 }
 
-
+.edit-chatroom-form-button{
+    margin-top: 60px;
+    margin-left: 350px;
+    width: 127.35px;
+    height: 32px;
+    background: dimgray;
+    border: 1px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: white;
+}
 
 .create-chatroom-form-button{
     margin-top: 60px;
@@ -71,6 +81,8 @@
 
     margin-left: 600px;
     margin-top: 350px;
+
+    color: rgba(38, 70, 83, 0.6);
 }
 
 .buhai-communications-inc-chat-room-form{
@@ -87,7 +99,7 @@
     align-items: center;
     text-align: center;
     margin-left: 600px;
-    margin-top: 300px;
+    margin-top: 210px;
 
     color: rgba(38, 70, 83, 0.6);
 }
@@ -190,6 +202,19 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+
+
+.welcome-message-edit-chatroom-form{
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    align-items: center;
+    color: #264653;
+    margin-top: 120px;
+    margin-left: 300px;
+}
 .create-chatroom-text-message{
     font-family: Roboto, sans-serif;
     font-style: normal;
@@ -341,6 +366,18 @@
     color: #264653;
 
 
+}
+
+.edit-chatroom-text-field{
+    position: absolute;
+    width: 320px;
+    height: 32.18px;
+
+    background: #FFFFFF;
+    border: 2px solid rgba(38, 70, 83, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-left: 250px;
 }
 
 .create-chatroom-text-field{

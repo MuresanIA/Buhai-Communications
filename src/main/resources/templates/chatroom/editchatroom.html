@@ -17,19 +17,24 @@
 </head>
 <body>
 <div>
+    <form th:action="@{/logout}" method="get">
+        <input th:class="logout-button-chatrooms" type="submit" value="Logout"/>
+    </form>
+</div>
+<div>
     <i class="fas fa-feather-alt app-icon fa-2x"></i>
     <div class="app-title">
         Buhai Communications
     </div>
 
 <form th:action="@{/editchatroom/{id}(id=${chatRoom.chatRoomId})}" th:object="${chatRoom}" method="post">
-    <h1>Edit Chat Room Name</h1>
 
+    <div th:class="welcome-message-edit-chatroom-form">
+        <p>Here we can rename things...</p>
+    </div>
     <input th:field="*{chatRoomId}" type="hidden">
-    <label for="queue_name">Chat Room Name</label>
-    <input th:field="*{queueName}" id="queue_name" type="text" placeholder="Chat Room Name" required>
-
-    <button type="submit">Save</button>
+    <input th:class="edit-chatroom-text-field" th:field="*{queueName}" id="queue_name" type="text" placeholder="Rename chatroom here..." required>
+    <button th:class="edit-chatroom-form-button" type="submit">Save</button>
 
 </form>
 </div>
