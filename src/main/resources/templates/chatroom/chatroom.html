@@ -32,30 +32,26 @@
     <p>Welcome, traveler!</p>
     <p>We have many options, you see...</p>
 </div>
-<div class="list-view">
+<div class="container" th:class="chatrooms-container-poisitioning">
 
-    <table th:class="table-chat-rooms-positioning">
-        <tbody>
-        <tr th:each="c : ${chatrooms}" th:class="chat-room-list-css">
-            <td th:text="${c.queueName}"></td>
-            <td>
+        <div th:each="c : ${chatrooms}" th:class="chat-room-list-css">
+            <div th:class="queuename-chatrooms-form" style="display: inline-block" th:text="${c.queueName}"></div>
+            <div>
                 <form th:action="@{'/websocket/' + ${c.chatRoomId}}" method="get">
                     <input th:class="connect-button-chat-rooms-form" type="submit" value="Connect"/>
                 </form>
-            </td>
-            <td>
+            </div>
+            <div>
                 <form th:action="@{/editchatroom/{id}(id = ${c.chatRoomId})}" method="get">
                     <input th:class="edit-button-chat-rooms-form" type="submit" value="Edit"/>
                 </form>
-            </td>
-            <td>
+            </div>
+            <div>
                 <form th:action="@{/deletechatroom/{id}(id = ${c.chatRoomId})}" method="get">
                     <input th:class="delete-button-chat-rooms-form" type="submit" value="Delete"/>
                 </form>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+            </div>
+        </div>
 </div>
 <div>
     <br>
