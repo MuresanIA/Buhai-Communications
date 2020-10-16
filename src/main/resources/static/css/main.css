@@ -226,6 +226,20 @@
     margin-left: 77px;
 }
 
+.error{
+    position: absolute;
+    margin-left: 140px;
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: red;
+}
+
 .chat-room-list-css {
     /* Rectangle 1 */
 
