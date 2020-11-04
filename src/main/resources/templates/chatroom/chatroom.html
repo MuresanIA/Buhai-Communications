@@ -47,7 +47,7 @@
         </div>
         <div>
             <form th:action="@{/deletechatroom/{id}(id = ${c.chatRoomId})}" method="get">
-                <input th:class="delete-button-chat-rooms-form" type="submit" value="Delete"/>
+                <input th:class="delete-button-chat-rooms-form" onclick="return confirm('Are you sure you want to delete this item?');" type="submit" value="Delete"/>
             </form>
         </div>
     </div>
