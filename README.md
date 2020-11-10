@@ -21,7 +21,7 @@ Technology used:
 - PostgreSQL
 
 A short demo can be found here:
-YouTube: https://youtu.be/-84LJLveus0
+YouTube: https://www.youtube.com/watch?v=jacUHGmzrWI&feature=youtu.be
 
 Future work:
 
