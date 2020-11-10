@@ -16,7 +16,7 @@ Technology used:
 - Spring - Data
 - Spring - Web
 - Spring - Security
-- Hyper Text Markup Language
+- Hypertext Markup Language
 - Cascade Style Sheet
 - PostgreSQL
 
